@@ -1,9 +1,12 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import read_yaml from "./helpers/read_yaml";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  console.log();
 
   return (
     <section className="bg-off-white1 dark:bg-blue3 min-h-screen flex items-center justify-center pt-10 pb-10 font-helvetica">
