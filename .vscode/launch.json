@@ -9,6 +9,15 @@
       "request": "launch",
       "name": "Nuxt: Firefox",
       "url": "http://localhost:3000",
+      "reAttach": true,
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Nuxt: Firefox Tailwind",
+      "url": "http://localhost:3000/_tailwind",
+      "reAttach": true,
       "webRoot": "${workspaceFolder}"
     },
     {
@@ -23,7 +32,11 @@
   "compounds": [
     {
       "name": "Nuxt: Full",
-      "configurations": ["Nuxt: Node", "Nuxt: Firefox"]
+      "configurations": [
+        "Nuxt: Node",
+        "Nuxt: Firefox",
+        "Nuxt: Firefox Tailwind"
+      ]
     }
   ]
 }
