@@ -1,31 +1,27 @@
 <script setup>
-import { ref } from 'vue';
 import { match } from "~/types/helpers/matchCard"
 
+const props = defineProps({
+    data: {
+        type: Object,
+        default: Object
+    },
+    idnum: {
+        type: Number,
+        default: Number
+    }
+})
 const cardClass = new (match(props.data))(props.data);
 </script>
 
-
 <template>
-    <div v-if="!errored">
-        <component :is="cardClass.component" @errored="errored = true" />
+    <div>
+        <component :is="cardClass.component" />
     </div>
 </template>
 
-
-
-
 <script>
-
-const errored = ref(false)
-
 export default {
     name: "DefaultCard",
-    props: {
-        data: {
-            type: object,
-            default: {}
-        }
-    },
 }
 </script>

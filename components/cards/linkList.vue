@@ -16,14 +16,13 @@
                 <a href="https://gist.github.com/timothypholmes">gists</a>
             </li>
         </ul>
-        <button @click="$emit('errored')">
-            Emmit
-        </button>
     </div>
 </template>
 
 
 <script>
+
+
 // $emit('toggle')
 // this.$emit('update:error', true)
 export default {
