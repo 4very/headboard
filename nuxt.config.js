@@ -35,7 +35,22 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend(config) {
+      config.module.rules.push({
+        test: /config\/.*\.ya?ml$/,
+        use: 'yaml-loader',
+      })
+    },
+    // extend(config) {
+    //   config.module.rules.push({
+    //     test: /\.ts$/,
+    //     exclude: /node_modules|vue\/src/,
+    //     loader: 'ts-loader',
+    //     options: { appendTsSuffixTo: [/\.vue$/] },
+    //   })
+    // },
+  },
 
   tailwindcss: {
     config: {

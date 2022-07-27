@@ -1,0 +1,1 @@
+export { linkList } from './linkList'
