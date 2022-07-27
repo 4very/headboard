@@ -8,8 +8,12 @@ module.exports = {
     '@nuxtjs/eslint-config-typescript',
     'plugin:nuxt/recommended',
     'prettier',
+    'plugin:vue/vue3-recommended',
   ],
-  plugins: [],
+  plugins: ['eslint-plugin-vue'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'vue/html-indent': 0,
+    'vue/html-closing-bracket-newline': 0,
+  },
 }

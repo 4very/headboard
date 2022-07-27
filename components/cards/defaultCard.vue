@@ -1,15 +1,14 @@
 <script setup>
-import { match } from "~/types/helpers/matchCard"
 import { ref } from 'vue';
+import { match } from "~/types/helpers/matchCard"
 
-const props = defineProps(['data'])
 const cardClass = new (match(props.data))(props.data);
 </script>
 
 
 <template>
     <div v-if="!errored">
-        <component :is="cardClass.component" @errored="errored = true"> </component>
+        <component :is="cardClass.component" @errored="errored = true" />
     </div>
 </template>
 
@@ -21,6 +20,12 @@ const cardClass = new (match(props.data))(props.data);
 const errored = ref(false)
 
 export default {
-    name: "defaultCard",
+    name: "DefaultCard",
+    props: {
+        data: {
+            type: object,
+            default: {}
+        }
+    },
 }
 </script>

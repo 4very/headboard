@@ -1,7 +1,7 @@
 import { Component } from 'vue'
-import linkListC from '~/components/cards/linkList.vue'
 import { RemoveMethods } from '../helpers/classValSelecting'
 import { Card } from './default'
+import linkListC from '~/components/cards/linkList.vue'
 
 export class linkList extends Card {
   // class identifiers
