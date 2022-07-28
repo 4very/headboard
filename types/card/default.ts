@@ -7,6 +7,9 @@ import { Component } from 'vue'
 
 export class Card {
   id!: string
+  public rowSpan: number = 1
+  public colSpan: number = 1
+
   component?: Component
 
   constructor(obj: { id: string }, id: string) {

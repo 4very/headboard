@@ -15,5 +15,6 @@ module.exports = {
   rules: {
     'vue/html-indent': 0,
     'vue/html-closing-bracket-newline': 0,
+    'vue/first-attribute-linebreak': 0,
   },
 }

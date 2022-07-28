@@ -2,13 +2,12 @@ title: Testing1
 default_theme: dark
 cards:
   - id: linkList
-    elements:
-      - id: element-1
-      - id: element-2
-      - id: element-3
+    rowSpan: 2
+    colSpan: 2
   - id: linkList
-    elements:
-      - id: element-1
-      - id: element-2
-      - id: element-3
-    test2: exds
+    rowSpan: 2
+    colSpan: 1
+
+  - id: spacer
+  - id: error
+    text: 'Error!'

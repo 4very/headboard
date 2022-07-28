@@ -1,5 +1,7 @@
 <template>
-  <Grid />
+  <div class="min-h-screen min-w-screen bg-off-white1 dark:bg-blue3">
+    <Grid />
+  </div>
 </template>
 
 <script lang="ts">
