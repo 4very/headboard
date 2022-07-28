@@ -9,6 +9,7 @@ export class error extends Card {
   public readonly component: Component = errorCard;
 
   public static text: string = 'Error!';
+  public subtext: string = '';
 
   constructor (obj: RemoveMethods<error>) {
     super(obj, error.id);
