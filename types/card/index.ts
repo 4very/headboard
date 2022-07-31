@@ -1,3 +1,3 @@
 export { error } from './error';
-export { linkList } from './linkList';
+export { list } from './list';
 export { spacer } from './spacer';

@@ -5,8 +5,8 @@ import * as cardTypes from '~/types/card';
 
 export function match<T extends { id: string }> (obj: T): any {
   switch (obj.id) {
-    case 'linkList':
-      return cardTypes.linkList;
+    case 'list':
+      return cardTypes.list;
     case 'error':
       return cardTypes.error;
     case 'spacer':

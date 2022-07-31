@@ -1,5 +1,5 @@
 import { defineNuxtConfig } from 'nuxt';
-import eslintPlugin from 'vite-plugin-eslint';
+// import eslintPlugin from 'vite-plugin-eslint';
 
 import ViteYaml from '@modyfi/vite-plugin-yaml';
 
@@ -7,7 +7,7 @@ import ViteYaml from '@modyfi/vite-plugin-yaml';
 export default defineNuxtConfig({
   vite: {
     plugins: [
-      eslintPlugin(),
+      // eslintPlugin(),
       ViteYaml()
     ]
   },
@@ -25,8 +25,14 @@ export default defineNuxtConfig({
    */
   modules: [
     // https://tailwindcsss.nuxtjs.org
-    'nuxt-windicss'
+    'nuxt-windicss',
+    '@pinia/nuxt'
   ],
+
+  components: {
+    global: true,
+    dirs: ['~/components']
+  },
 
   typescript: {
     tsConfig: {
@@ -41,7 +47,10 @@ export default defineNuxtConfig({
         sourceMap: true,
         strict: true,
         noEmit: true,
-        experimentalDecorators: true
+        experimentalDecorators: true,
+        types: [
+          '@modyfi/vite-plugin-yaml/modules'
+        ]
       },
       exclude: ['node_modules', '.nuxt', 'dist']
     }

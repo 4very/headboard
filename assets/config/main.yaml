@@ -5,10 +5,10 @@
 title: Testing
 default_theme: dark
 cards:
-  - id: linkList
+  - id: list
     rowSpan: 2
     colSpan: 2
-  - id: linkList
+  - id: list
     rowSpan: 2
     colSpan: 1
   - id: spacer
