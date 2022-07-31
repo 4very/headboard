@@ -9,7 +9,8 @@
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:js && yarn lint:prettier",
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix",
-    "allupdate": "yarn upgrade-interactive"
+    "allupdate": "yarn upgrade-interactive",
+    "refresh": "rm -rf .nuxt yarn.lock node_modules && yarn install"
   },
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.0.2",
