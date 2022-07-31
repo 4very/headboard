@@ -5556,6 +5556,13 @@ vite-plugin-checker@^0.4.9:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^3.0.2"
 
+vite-plugin-dynamic-import@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-dynamic-import/-/vite-plugin-dynamic-import-1.1.0.tgz#58ef69b2c85d4fffa5c9c28512c22f53b0fdaf40"
+  integrity sha512-mCLlw0Djp30kWOSARXywPTCJOsTVy1BKfNLTgp4v/Q83mBZJz2T0HFhT2Jvv5+DwXm1CMB1QnzWgnNPhllv92g==
+  dependencies:
+    fast-glob "^3.2.11"
+
 vite-plugin-eslint@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/vite-plugin-eslint/-/vite-plugin-eslint-1.7.0.tgz#195a19bc059fb40364c863f38924d556a623fb80"

@@ -7,13 +7,13 @@ import { Component } from 'vue';
 
 export class Card {
   id!: string;
-  public rowSpan: number = 1;
-  public colSpan: number = 1;
+  public rowSpan = 1;
+  public colSpan = 1;
 
   component?: Component;
 
   constructor (obj: { id: string }, id: string) {
-    if (id !== obj.id) { throw new Error(`Id value of ${obj.id} doesn't match class id of ${id}!`); };
+    if (id !== obj.id) { throw new Error(`Id value of ${obj.id} doesn't match class id of ${id}!`); }
 
     Object.assign(this, obj);
   }

@@ -1,5 +1,5 @@
 <script setup>
-import { match } from '~/types/helpers/matchCard'
+import { match } from '~/types/helpers/matchCard';
 
 const props = defineProps({
   data: {
@@ -10,11 +10,11 @@ const props = defineProps({
     type: Number,
     default: Number
   }
-})
+});
 
 // console.log(props.data)
 
-const cardClass = new (match(props.data))(props.data)
+const cardClass = new (match(props.data))(props.data);
 </script>
 
 <template>
@@ -32,6 +32,6 @@ const cardClass = new (match(props.data))(props.data)
 <script>
 
 export default {
-  name: 'DefaultCard'
-}
+  name: 'Default'
+};
 </script>

@@ -26,5 +26,5 @@
 export default {
   name: 'LinkListC',
   emits: { errored: null }
-}
+};
 </script>

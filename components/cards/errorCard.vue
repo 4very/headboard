@@ -5,7 +5,7 @@ const props = defineProps({
     type: Object,
     default: Object
   }
-})
+});
 </script>
 
 <template>
@@ -36,5 +36,5 @@ const props = defineProps({
 <script>
 export default {
   name: 'ErrorCard'
-}
+};
 </script>
