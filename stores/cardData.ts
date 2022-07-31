@@ -1,5 +1,7 @@
+import { toHandlers } from 'nuxt/dist/app/compat/capi';
 import { defineStore } from 'pinia';
 import { Card } from '~/types/card/default';
+import { match } from '~~/types/helpers/matchCard';
 
 export const CardData = defineStore('CardData', {
   state: () => {
@@ -17,6 +19,14 @@ export const CardData = defineStore('CardData', {
     },
     addCard (card: Card) {
       this.cards.push(card);
+    },
+    validComponent (i: number) {
+      return resolveComponent(this.cards[i].valid ? this.cards[i].component : 'CardError');
+    },
+    addCardWithType (data: Card) {
+      this.cards.push(
+        (new (match(data))(data))
+      );
     }
   },
   getters: {

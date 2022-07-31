@@ -8,9 +8,10 @@ export class list extends Card {
   public readonly component: string = 'CardList';
 
   // class variables
-  elements: string[] = [];
+  public elements: string[] = [];
 
   constructor (obj: RemoveMethods<list>) {
     super(obj, list.id);
+    this.elements = obj?.elements ? obj.elements : [];
   }
 }

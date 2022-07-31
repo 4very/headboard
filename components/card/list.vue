@@ -1,3 +1,21 @@
+<script setup>
+import { CardData } from '~~/stores/cardData';
+
+const props = defineProps({
+  id: {
+    type: Number,
+    default: Number
+  }
+});
+
+const store = CardData();
+
+if (store.cards[props.id].elements.length === 1) {
+  store.invalid(props.id);
+}
+
+</script>
+
 <template>
   <div>
     <ul

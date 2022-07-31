@@ -19,6 +19,6 @@ const store = CardData();
     ${(store.cards[props.id].rowSpan == 1 && store.cards[props.id].colSpan == 2) ? 'col-span-2 pb-1/2' : 'pb-full'}
     ${(store.cards[props.id].rowSpan == 2 && store.cards[props.id].colSpan == 2) ? 'row-span-2 col-span-2' : ''} `"
   >
-    <component :is="resolveComponent(store.cards[props.id].component)" :id="props.id" />
+    <component :is="store.validComponent(props.id)" :id="props.id" />
   </div>
 </template>
