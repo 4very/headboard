@@ -1,0 +1,16 @@
+# title: Hello Content v2!
+# description: The writing experience for Nuxt 3
+# category: announcement
+
+title: Testing
+default_theme: dark
+cards:
+  - id: linkList
+    rowSpan: 2
+    colSpan: 2
+  - id: linkList
+    rowSpan: 2
+    colSpan: 1
+  - id: spacer
+  - id: error
+    text: 'Error!'

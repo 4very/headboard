@@ -1,13 +1,25 @@
 import { defineNuxtConfig } from 'nuxt'
 import eslintPlugin from 'vite-plugin-eslint'
 
+import ViteYaml from '@modyfi/vite-plugin-yaml'
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   vite: {
     plugins: [
-      eslintPlugin()
+      eslintPlugin(),
+      ViteYaml()
     ]
   },
+
+  // nitro: {
+  //   esbuild: {
+  //     options: {
+  //       target: 'esnext'
+  //     }
+  //   }
+  // },
+
   /*
    ** Nuxt modules
    */

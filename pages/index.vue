@@ -1,3 +1,10 @@
+<script setup>
+import data from '~/assets/config/main.yaml'
+
+</script>
+
 <template>
-  <Page />
+  <div>
+    <Page :data="data" />
+  </div>
 </template>
