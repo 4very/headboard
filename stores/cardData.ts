@@ -1,4 +1,3 @@
-import { toHandlers } from 'nuxt/dist/app/compat/capi';
 import { defineStore } from 'pinia';
 import { Card } from '~/types/card/default';
 import { match } from '~~/types/helpers/matchCard';
