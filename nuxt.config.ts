@@ -5,28 +5,20 @@ import ViteYaml from '@modyfi/vite-plugin-yaml';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  srr: false,
+
   vite: {
     plugins: [
-      // eslintPlugin(),
       ViteYaml()
     ]
   },
-
-  // nitro: {
-  //   esbuild: {
-  //     options: {
-  //       target: 'esnext'
-  //     }
-  //   }
-  // },
-
   /*
    ** Nuxt modules
    */
   modules: [
-    // https://tailwindcsss.nuxtjs.org
     'nuxt-windicss',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@vueuse/nuxt'
   ],
 
   components: {
