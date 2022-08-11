@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxi dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "lint:js": "eslint --ext '.js,.ts,.vue' --ignore-path .gitignore .",

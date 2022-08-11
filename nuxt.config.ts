@@ -5,7 +5,6 @@ import ViteYaml from '@modyfi/vite-plugin-yaml';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  srr: false,
 
   vite: {
     plugins: [
