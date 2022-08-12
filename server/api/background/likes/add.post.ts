@@ -1,23 +1,21 @@
 import fs from 'fs';
 import { imageMeta } from '../populate.post';
-import { maindata } from '../metadata.get';
-import { likedJson } from './get.get';
+import { likedJson } from './all.get';
 import { stringify } from '~~/compostables/utils';
 
 export default defineEventHandler(async (event) => {
-  const body = await useBody(event) as imageMeta;
-  const liked: imageMeta[] = await $fetch('/api/background/likes/get', { responseType: 'json' });
+  const isMain = useQuery(event).isMain === 'true';
+  const metadata = (await $fetch('/api/background/metadata', { params: { isMain: (!isMain) ? 'true' : 'false' } })).data as imageMeta;
 
-  const status = await $fetch('/api/background/likes/status', { body });
+  const liked: {[index: string]: imageMeta} = await $fetch('/api/background/likes/all', { method: 'GET', responseType: 'json' }) as {[index: string]: imageMeta};
+
+  const status = await $fetch('/api/background/likes/status', { method: 'GET', responseType: 'json', params: { val: metadata.id } }) as {exists: boolean, location: number};
 
   if (status.exists) { return 'Image already liked'; }
-  liked.push(body);
+  metadata.base64 = '';
+  liked[metadata.id] = metadata;
 
   fs.writeFileSync(likedJson, stringify(liked));
-
-  body.liked = true;
-
-  fs.writeFileSync(maindata, stringify(body));
 
   return 'Success';
 });
