@@ -27,7 +27,7 @@ export default defineEventHandler((event) => {
 
   let data;
   try {
-    data = JSON.parse(fs.readFileSync(backupdata).toString()) as imageMeta;
+    data = JSON.parse(fs.readFileSync(retval.jsonPath).toString()) as imageMeta;
   } catch {
     data = {};
   }

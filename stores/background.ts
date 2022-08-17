@@ -22,7 +22,7 @@ export const background = defineStore('background', {
       this.data = response.data;
       this.imageUrl = response.imagePath.replace('./public', '');
 
-      $fetch('/api/background/populate', { method: 'POST', params: { isMain: this.isMain } });
+      $fetch('/api/background/populate', { method: 'POST', params: { isMain: !this.isMain } });
     }
   }
 });

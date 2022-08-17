@@ -17,7 +17,7 @@ export interface imageMeta {
 
 export default defineEventHandler(async (event) => {
   const isMain = useQuery(event).isMain === 'true';
-  const metadata = await $fetch('/api/background/metadata', { params: { isMain: (!isMain) ? 'true' : 'false' } });
+  const metadata = await $fetch('/api/background/metadata', { params: { isMain: (isMain) ? 'true' : 'false' } });
 
   // query and select image
   const ancSelection = (await $fetch('https://www.gstatic.com/culturalinstitute/tabext/imax.json')) as imageMeta[];
