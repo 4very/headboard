@@ -21,6 +21,7 @@ export default defineEventHandler(async (event) => {
 
   // query and select image
   const ancSelection = (await $fetch('https://www.gstatic.com/culturalinstitute/tabext/imax.json')) as imageMeta[];
+
   const selection = ancSelection[Math.floor(Math.random() * ancSelection.length)];
 
   // get and download image

@@ -5,6 +5,7 @@ export const maindata = './assets/background/main.json';
 export const backupdata = './assets/background/backup.json';
 export const mainimg = './public/background/main.jpeg';
 export const backupimg = './public/background/backup.jpeg';
+export const mainSwapFile = './assets/background/backup';
 
 export default defineEventHandler((event) => {
   const isMain = useQuery(event).isMain === 'true';
