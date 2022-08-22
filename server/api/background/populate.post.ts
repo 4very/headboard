@@ -35,6 +35,9 @@ export default defineEventHandler(async (event) => {
   selection.id = selection.link.replace('asset-viewer/', '');
   selection.link = `https://artsandculture.google.com/${selection.link.replace('asset-viewer/', 'asset/')}`;
   selection.attribution_link = `https://artsandculture.google.com/${selection.attribution_link.replace('collection/', 'partner/')}`;
+  if (selection.artist_link.startsWith('entity')) {
+    selection.artist_link = `https://artsandculture.google.com/${selection.artist_link}`;
+  }
 
   const status = await $fetch('/api/background/likes/status', { method: 'GET', responseType: 'json', params: { val: selection.id } }) as {exists: boolean};
   if (status.exists) {

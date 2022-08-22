@@ -15,7 +15,6 @@ export const background = defineStore('background', {
   actions: {
     async init () {
       this.isMain = await $fetch('/api/background/swapStatus') as boolean;
-      console.log(this.isMain);
       const response = await $fetch('/api/background/metadata', { method: 'GET', responseType: 'json', params: { isMain: this.isMain } });
       Object.assign(this.data, response.data);
     },
