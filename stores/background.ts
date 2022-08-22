@@ -1,14 +1,24 @@
-import fs from 'fs';
 import { defineStore } from 'pinia';
+import { imageMeta } from '~~/server/api/background/populate.post';
+
+interface backgroundStore {
+  data: imageMeta
+  isMain: boolean
+}
+
 export const background = defineStore('background', {
-  state: () => {
+  state: (): backgroundStore => {
     return {
-      data: JSON.parse(fs.readFileSync('./assets/background/main.json').toString()),
-      imageUrl: '/background/main.jpeg',
+      data: {} as imageMeta,
       isMain: true
     };
   },
   actions: {
+    async init () {
+      this.isMain = true;
+      const response = await $fetch('/api/background/metadata', { method: 'GET', responseType: 'json', params: { isMain: this.isMain } });
+      Object.assign(this.data, response.data);
+    },
     toggleLike () {
       this.data.liked
         ? $fetch('/api/background/likes/remove', { method: 'POST', params: { isMain: this.isMain } })
@@ -19,8 +29,7 @@ export const background = defineStore('background', {
       this.isMain = !this.isMain;
       const response = await $fetch('/api/background/metadata', { method: 'GET', responseType: 'json', params: { isMain: this.isMain } });
 
-      this.data = response.data;
-      this.imageUrl = response.imagePath.replace('./public', '');
+      Object.assign(this.data, response.data);
 
       $fetch('/api/background/populate', { method: 'POST', params: { isMain: !this.isMain } });
     }
