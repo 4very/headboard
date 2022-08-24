@@ -4,12 +4,16 @@ import { imageMeta } from '~~/server/api/background/populate.post';
 interface backgroundStore {
   data: imageMeta
   isMain: boolean
+  backgroundHidden: boolean
+  gridHidden: boolean
 }
 export const background = defineStore('background', {
   state: (): backgroundStore => {
     return {
       data: {} as imageMeta,
-      isMain: true
+      isMain: true,
+      backgroundHidden: false,
+      gridHidden: false
     };
   },
   actions: {
@@ -34,6 +38,9 @@ export const background = defineStore('background', {
       await $fetch('/api/background/populate', { method: 'POST', params: { isMain: !this.isMain ? 'true' : 'false' } });
 
       await $fetch('/api/background/swap', { method: 'POST', params: { isMain: this.isMain } });
+    },
+    toggleGrid () {
+      this.gridHidden = !this.gridHidden;
     }
   }
 });

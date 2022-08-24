@@ -1,14 +1,12 @@
 <script setup>
+import { background } from '~/stores/background';
 
-// const data = await useAsyncData(props.filename, () => import(`~/config/${props.filename}`));
-// console.log(data);
-
-// console.log(data, props);
+const store = background();
 
 </script>
 
 <template>
   <Background>
-    <Grid />
+    <Grid v-if="!store.gridHidden" />
   </Background>
 </template>
