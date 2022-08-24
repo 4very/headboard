@@ -29,6 +29,9 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.0",
+    "colorthief": "^2.3.2",
+    "fast-average-color": "^9.1.1",
+    "fast-average-color-node": "^2.4.0",
     "nuxt-windicss": "^2.5.0",
     "pinia": "^2.0.18"
   }

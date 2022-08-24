@@ -13,7 +13,7 @@ const store = CardData();
 
 <template>
   <div
-    :class="`w-full shadow-lg rounded-xl relative
+    :class="`w-full shadow-lg rounded-xl relative  bg-[#465780]
     ${(store.cards[props.id].id === 'spacer') ? 'invisible' : ''}
     ${(store.cards[props.id].rowSpan == 2 && store.cards[props.id].colSpan == 1) ? 'row-span-2 pb-full' : 'h-0'}
     ${(store.cards[props.id].rowSpan == 1 && store.cards[props.id].colSpan == 2) ? 'col-span-2 pb-1/2' : 'pb-full'}
