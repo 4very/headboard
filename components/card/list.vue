@@ -9,7 +9,7 @@ const props = defineProps({
 });
 
 const store = CardData();
-console.log(store.cards[props.id].validate());
+store.cards[props.id].validate();
 
 </script>
 
