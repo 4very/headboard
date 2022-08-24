@@ -10,6 +10,8 @@ export class Card {
   public component = 'CardError';
   public rowSpan = 1;
   public colSpan = 1;
+  public errorText = '';
+  public errorSubText = '';
 
   constructor (obj: { id: string }, id: string) {
     if (id !== obj.id) { throw new Error(`Id value of ${obj.id} doesn't match class id of ${id}!`); }

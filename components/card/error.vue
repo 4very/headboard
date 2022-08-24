@@ -28,10 +28,10 @@ const store = CardData();
       />
     </svg>
     <div class="-mt-2 text-lg text-rose-900">
-      {{ store.cards[props.id].text }}
+      {{ store.cards[props.id].errorText }}
     </div>
     <div class="text-sm text-center text-rose-700">
-      {{ store.cards[props.id].subtext }}
+      {{ store.cards[props.id].errorSubText }}
     </div>
   </div>
 </template>

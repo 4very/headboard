@@ -6,8 +6,8 @@ export class error extends Card {
   static readonly id: string = 'error';
   public readonly component: string = 'CardError';
 
-  public static text = 'Error!';
-  public subtext = '';
+  public static errorText = 'Error!';
+  public errorSubText = '';
 
   constructor (obj: RemoveMethods<error>) {
     super(obj, error.id);
