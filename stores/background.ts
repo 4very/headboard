@@ -6,6 +6,7 @@ interface backgroundStore {
   isMain: boolean
   backgroundHidden: boolean
   gridHidden: boolean
+  menuOpen: boolean
 }
 export const background = defineStore('background', {
   state: (): backgroundStore => {
@@ -13,7 +14,8 @@ export const background = defineStore('background', {
       data: {} as imageMeta,
       isMain: true,
       backgroundHidden: false,
-      gridHidden: false
+      gridHidden: false,
+      menuOpen: false
     };
   },
   actions: {
@@ -41,6 +43,13 @@ export const background = defineStore('background', {
     },
     toggleGrid () {
       this.gridHidden = !this.gridHidden;
+    },
+    toggleBackground () {
+      this.backgroundHidden = !this.backgroundHidden;
+    },
+    toggleMenu () {
+      this.menuOpen = !this.menuOpen;
     }
+
   }
 });
