@@ -20,6 +20,10 @@ export class Card {
     Object.assign(this, obj);
     // this.component = `Card${obj.id.charAt(0).toUpperCase() + obj.id.slice(1)}`;
   }
+
+  validate () {
+    return true;
+  }
 }
 
 export const defaultCardProps = {

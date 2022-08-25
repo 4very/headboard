@@ -3,8 +3,9 @@ import { CardData } from '~/stores/cardData';
 import { defaultCardProps } from '~~/types/card/default';
 
 const props = defineProps(defaultCardProps);
-
 const store = CardData();
+
+store.cards[props.page][props.id].validate();
 </script>
 
 <template>
