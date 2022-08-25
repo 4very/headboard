@@ -1,12 +1,8 @@
 <script setup>
 import { CardData } from '~~/stores/cardData';
+import { defaultCardProps } from '~~/types/card/default';
 
-const props = defineProps({
-  id: {
-    type: Number,
-    default: Number
-  }
-});
+const props = defineProps(defaultCardProps);
 
 const store = CardData();
 </script>
@@ -28,10 +24,10 @@ const store = CardData();
       />
     </svg>
     <div class="-mt-2 text-lg text-rose-900">
-      {{ store.cards[props.id].errorText }}
+      {{ store.cards[props.page][props.id].errorText }}
     </div>
     <div class="text-sm text-center text-rose-700">
-      {{ store.cards[props.id].errorSubText }}
+      {{ store.cards[props.page][props.id].errorSubText }}
     </div>
   </div>
 </template>

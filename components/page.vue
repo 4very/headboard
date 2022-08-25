@@ -1,5 +1,11 @@
 <script setup>
 import { background } from '~/stores/background';
+const props = defineProps({
+  page: {
+    type: String,
+    default: String
+  }
+});
 
 const store = background();
 
@@ -7,6 +13,6 @@ const store = background();
 
 <template>
   <Background>
-    <Grid v-if="!store.gridHidden" />
+    <Grid v-if="!store.gridHidden" :page="props.page" />
   </Background>
 </template>

@@ -12,6 +12,8 @@ export class Card {
   public colSpan = 1;
   public errorText = '';
   public errorSubText = '';
+  public textColor = 'auto';
+  public bgColor = 'auto';
 
   constructor (obj: { id: string }, id: string) {
     if (id !== obj.id) { throw new Error(`Id value of ${obj.id} doesn't match class id of ${id}!`); }
@@ -19,3 +21,14 @@ export class Card {
     // this.component = `Card${obj.id.charAt(0).toUpperCase() + obj.id.slice(1)}`;
   }
 }
+
+export const defaultCardProps = {
+  page: {
+    type: String,
+    default: String
+  },
+  id: {
+    type: Number,
+    default: Number
+  }
+};

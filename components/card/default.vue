@@ -1,12 +1,8 @@
 <script setup>
 import { CardData } from '~/stores/cardData';
+import { defaultCardProps } from '~~/types/card/default';
 
-const props = defineProps({
-  id: {
-    type: Number,
-    default: Number
-  }
-});
+const props = defineProps(defaultCardProps);
 
 const store = CardData();
 </script>
@@ -14,11 +10,11 @@ const store = CardData();
 <template>
   <div
     :class="`w-full shadow-lg rounded-xl relative
-    ${(store.cards[props.id].id === 'spacer') ? 'invisible' : ''}
-    ${(store.cards[props.id].rowSpan == 2 && store.cards[props.id].colSpan == 1) ? 'row-span-2 pb-full' : 'h-0'}
-    ${(store.cards[props.id].rowSpan == 1 && store.cards[props.id].colSpan == 2) ? 'col-span-2 pb-1/2' : 'pb-full'}
-    ${(store.cards[props.id].rowSpan == 2 && store.cards[props.id].colSpan == 2) ? 'row-span-2 col-span-2' : ''} `"
+    ${(store.cards[props.page][props.id].id === 'spacer') ? 'invisible' : ''}
+    ${(store.cards[props.page][props.id].rowSpan == 2 && store.cards[props.page][props.id].colSpan == 1) ? 'row-span-2 pb-full' : 'h-0'}
+    ${(store.cards[props.page][props.id].rowSpan == 1 && store.cards[props.page][props.id].colSpan == 2) ? 'col-span-2 pb-1/2' : 'pb-full'}
+    ${(store.cards[props.page][props.id].rowSpan == 2 && store.cards[props.page][props.id].colSpan == 2) ? 'row-span-2 col-span-2' : ''} `"
   >
-    <component :is="store.validComponent(props.id)" :id="props.id" />
+    <component :is="store.validComponent(props.page, props.id)" :id="props.id" :page="props.page" />
   </div>
 </template>

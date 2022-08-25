@@ -6,26 +6,29 @@ export const CardData = defineStore('CardData', {
   state: () => {
     return {
     // all these properties will have their type inferred automatically
-      cards: [] as Card[]
+      cards: {} as {[key: string]: Card[]}
     };
   },
   actions: {
-    invalid (i: number) {
-      this.cards[i].valid = false;
+    invalid (page: string, i: number) {
+      this.cards[page][i].valid = false;
     },
-    valid (i: number) {
-      this.cards[i].valid = true;
+    valid (page:string, i: number) {
+      this.cards[page][i].valid = true;
     },
-    addCard (card: Card) {
-      this.cards.push(card);
+    addCard (page: string, card: Card) {
+      this.cards[page].push(card);
     },
-    validComponent (i: number) {
-      return resolveComponent(this.cards[i].valid ? this.cards[i].component : 'CardError');
+    validComponent (page: string, i: number) {
+      return resolveComponent(this.cards[page][i].valid ? this.cards[page][i].component : 'CardError');
     },
-    addCardWithType (data: Card) {
-      this.cards.push(
+    addCardWithType (page: string, data: Card) {
+      this.cards[page].push(
         (new (match(data))(data))
       );
+    },
+    resetPage (page: string) {
+      this.cards[page] = [] as Card[];
     }
   },
   getters: {
