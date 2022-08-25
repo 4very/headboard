@@ -28,5 +28,8 @@ const store = CardData();
     <div class="text-sm text-center text-rose-700">
       {{ store.cards[props.page][props.id].errorSubText }}
     </div>
+    <div class="top-1 left-2 text-rose-800 absolute">
+      {{ props.id }}
+    </div>
   </div>
 </template>
