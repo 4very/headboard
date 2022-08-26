@@ -8,7 +8,7 @@ export class list extends Card {
   public readonly component: string = 'CardList';
 
   // class variables
-  public elements: {text: string, link: string}[] = [];
+  public elements: {text: string, link: string, color: string}[] = [];
   public title = '';
 
   constructor (obj: RemoveMethods<list>) {
@@ -23,7 +23,9 @@ export class list extends Card {
         this.valid = false;
         this.errorText = 'Element doesnt contain a valid key';
         this.errorSubText = `Element number ${i + 1} does not contain key 'link' or 'text'`;
+        return false;
       }
     });
+    return true;
   }
 }

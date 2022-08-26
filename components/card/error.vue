@@ -4,6 +4,8 @@ import { defaultCardProps } from '~~/types/card/default';
 
 const props = defineProps(defaultCardProps);
 const store = CardData();
+const cardData = store.pages[props.page].cards[props.id];
+
 </script>
 
 <template>
@@ -23,10 +25,10 @@ const store = CardData();
       />
     </svg>
     <div class="-mt-2 text-lg text-center text-rose-900">
-      {{ store.cards[props.page][props.id].errorText }}
+      {{ cardData.errorText }}
     </div>
     <div class="text-sm text-center text-rose-700">
-      {{ store.cards[props.page][props.id].errorSubText }}
+      {{ cardData.errorSubText }}
     </div>
     <div class="top-1 left-2 text-rose-800 absolute">
       {{ props.id }}

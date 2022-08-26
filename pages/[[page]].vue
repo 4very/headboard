@@ -8,9 +8,7 @@ const data = (await $fetch('/api/config/get', { params: { file: page } }));
 if (data.success) {
   const store = CardData();
   store.resetPage(page);
-  data.data.cards.forEach((elt) => {
-    store.addCardWithType(page, elt);
-  });
+  store.addPage(page, data.data);
 }
 
 </script>

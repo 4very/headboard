@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { parse } from 'yaml';
+import Page from '~~/types/page';
 
 const configFolder = './assets/config';
 export default defineEventHandler((event) => {
@@ -8,5 +9,5 @@ export default defineEventHandler((event) => {
 
   if (!fs.existsSync(file)) { return { success: false, path: file }; }
   const data = fs.readFileSync(file);
-  return { data: parse(data.toString()), success: true, path: file };
+  return { data: parse(data.toString()) as Page, success: true, path: file };
 });
