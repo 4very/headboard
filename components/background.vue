@@ -24,14 +24,13 @@ function ChangeBackground () {
 
 <template>
   <div
-    class="bg-cover bg-center bg-no-repeat min-h-screen min-w-screen dark:bg-blue3"
-    style=""
+    class="bg-cover bg-center bg-no-repeat bg-fixed min-h-screen min-w-screen dark:bg-blue"
     :style="{ backgroundImage: `url('data:image/jpeg;base64,${store.data.base64}')` }"
   >
     <slot />
 
     <div
-      class="flex font-sans font-extralight w-full p-5 bottom-0 left-0 absolute justify-items-start"
+      class="flex font-sans font-extralight w-full p-5 bottom-0 left-0 fixed justify-items-start"
       style="
       background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.33) 33%, rgba(0, 0, 0, 0.5) 100%);
       background-color: rgba(0, 0, 0, 0);
