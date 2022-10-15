@@ -1,5 +1,4 @@
 <script setup>
-import { background } from '~/stores/background';
 const props = defineProps({
   page: {
     type: String,
@@ -7,7 +6,7 @@ const props = defineProps({
   }
 });
 
-const store = background();
+const store = backgroundStore();
 
 </script>
 

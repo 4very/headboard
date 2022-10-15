@@ -1,9 +1,8 @@
-import { defineStore } from 'pinia';
 import { Card } from '~/types/card/default';
 import { match } from '~~/types/helpers/matchCard';
 import Page from '~~/types/page';
 
-export const CardData = defineStore('CardData', {
+export const CardDataStore = defineStore('CardData', {
   state: () => {
     return {
       pages: {} as {[key: string]: Page}

@@ -1,9 +1,8 @@
 <script setup>
-import { CardData } from '~~/stores/cardData';
 import { defaultCardProps } from '~~/types/card/default';
 
 const props = defineProps(defaultCardProps);
-const store = CardData();
+const store = CardDataStore();
 const cardData = store.pages[props.page].cards[props.id];
 
 </script>

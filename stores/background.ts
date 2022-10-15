@@ -1,15 +1,14 @@
-import { defineStore } from 'pinia';
 import { imageMeta } from '~~/server/api/background/populate.post';
 
-interface backgroundStore {
+interface backgroundStoreInterface {
   data: imageMeta
   isMain: boolean
   backgroundHidden: boolean
   gridHidden: boolean
   menuOpen: boolean
 }
-export const background = defineStore('background', {
-  state: (): backgroundStore => {
+export const backgroundStore = defineStore('background', {
+  state: (): backgroundStoreInterface => {
     return {
       data: {} as imageMeta,
       isMain: true,

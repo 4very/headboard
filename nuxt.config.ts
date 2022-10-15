@@ -12,9 +12,17 @@ export default defineNuxtConfig({
    */
   modules: [
     'nuxt-windicss',
-    '@pinia/nuxt',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore']
+      }
+    ],
     '@vueuse/nuxt'
   ],
+  imports: {
+    dirs: ['stores']
+  },
 
   components: {
     global: true,
@@ -34,10 +42,7 @@ export default defineNuxtConfig({
         sourceMap: true,
         strict: true,
         noEmit: true,
-        experimentalDecorators: true,
-        types: [
-          '@modyfi/vite-plugin-yaml/modules'
-        ]
+        experimentalDecorators: true
       },
       exclude: ['node_modules', '.nuxt', 'dist']
     }

@@ -1,5 +1,4 @@
 <script setup>
-import { CardData } from '~~/stores/cardData';
 const props = defineProps({
   page: {
     type: String,
@@ -7,7 +6,7 @@ const props = defineProps({
   }
 });
 
-const store = CardData();
+const store = CardDataStore();
 const cards = store.pages[props.page].cards;
 
 </script>

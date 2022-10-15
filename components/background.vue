@@ -1,8 +1,5 @@
 <script setup>
-
-import { background } from '~/stores/background';
-
-const store = background();
+const store = backgroundStore();
 
 if (store.data.base64 === undefined) {
   store.init();
